@@ -1,0 +1,348 @@
+/* Variáveis de Cor (MANTIDAS) */
+:root {
+    --roxo-principal: #6A1B9A; /* Roxo Escuro (Para Botões e Títulos) */
+    --roxo-secundario: #9C27B0; /* Roxo Médio (Para Hover) */
+    --roxo-claro: #E1BEE7; /* Roxo Claro Suave (Para o Fundo do Body) */
+    --roxo-fundo-escuro: #4A148C; /* Roxo mais Fundo para a Seção Principal */
+    --branco: #FFFFFF;
+    --texto-escuro: #333333;
+    --sombra-leve: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 1. Estilos Básicos e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--roxo-claro); 
+    color: var(--texto-escuro);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. Estilo do Container e Seções - MELHOR CENTRALIZAÇÃO */
+.container {
+    padding: 4em 2em; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo da Primeira Seção (Principal) */
+.principal {
+    background-color: var(--roxo-fundo-escuro); 
+    color: var(--branco);
+    text-align: center;
+    padding: 8em 2em; 
+    min-height: 60vh; 
+}
+
+.container__caixa {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* LOGO DA ESCOLA (GRANDE - 250px) */
+.logo-escola {
+    width: 250px; 
+    height: auto;
+    margin-bottom: 25px;
+    /* Inverte a cor da logo para ficar clara no fundo escuro */
+    filter: invert(100%) sepia(10%) saturate(1450%) hue-rotate(200deg) brightness(120%) contrast(100%); 
+}
+
+/* 3. Títulos e Textos */
+.container__titulo {
+    font-size: 2.5em;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    color: var(--branco);
+}
+
+.container__aviso {
+    font-size: 0.9em;
+    color: var(--roxo-claro); 
+    margin-top: 1em;
+}
+
+.descricao__titulo {
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--roxo-principal);
+    margin-bottom: 0.5em;
+    border-bottom: 3px solid var(--roxo-claro); 
+    padding-bottom: 5px;
+}
+
+.descricao__texto {
+    font-size: 1.1em;
+    color: var(--texto-escuro);
+    line-height: 1.5;
+}
+
+/* 4. Botões */
+.container__botao {
+    background-color: var(--roxo-principal); 
+    color: var(--branco);
+    border-radius: 8px;
+    padding: 1em 2em;
+    display: block; 
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: 1em;
+    transition: all 0.3s ease;
+    border: 1px solid var(--roxo-principal);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.container__botao:hover {
+    background-color: var(--roxo-secundario); 
+    border-color: var(--roxo-secundario);
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.botao_secundario {
+    background-color: transparent;
+    color: var(--branco);
+    border: 1px solid var(--branco); 
+    box-shadow: none;
+}
+
+.botao_secundario:hover {
+    background-color: var(--roxo-principal); 
+    color: var(--branco);
+    border-color: var(--roxo-principal);
+    transform: translateY(0);
+}
+
+.botao_terciario {
+    display: inline-block; 
+}
+
+/* 5. Estilo das Seções Secundárias */
+.secundario {
+    background-color: var(--branco);
+    flex-direction: column; 
+    width: 100%; 
+}
+
+.container__descricao {
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding: 20px 0;
+    text-align: center; 
+}
+
+/* 6. Estilos de Formulário (Sem mudanças) */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--roxo-principal);
+    font-size: 1em;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px; 
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-input:focus {
+    border-color: var(--roxo-principal);
+    outline: none;
+    box-shadow: 0 0 8px rgba(106, 27, 154, 0.3); 
+}
+
+/* 7. Estilos para Registro e Emojis (Sem mudanças) */
+.aluno-card {
+    background-color: var(--roxo-claro); 
+    border: none;
+    padding: 20px; 
+    margin-bottom: 20px;
+    border-radius: 12px; 
+    box-shadow: var(--sombra-leve);
+}
+
+.aluno-card strong {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--roxo-principal);
+    font-size: 1.3em;
+    border-bottom: 1px dashed var(--roxo-secundario);
+    padding-bottom: 10px;
+}
+
+#aluno-info-display {
+    font-weight: 600;
+    color: var(--roxo-principal);
+    margin-top: 10px;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.emocao-group {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    flex-wrap: wrap; 
+}
+
+.emocao-option {
+    cursor: pointer;
+    padding: 10px; 
+    border-radius: 12px;
+    border: 3px solid transparent; 
+    transition: all 0.2s ease-in-out;
+    background-color: var(--branco); 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 110px; 
+}
+
+.emocao-nome {
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-top: 5px; 
+    color: var(--texto-escuro); 
+}
+
+.emocao-img {
+    width: 50px; 
+    height: 50px;
+    display: block;
+}
+
+.emocao-option input[type="radio"]:checked + .emocao-img {
+    transform: scale(1.1); 
+    box-shadow: 0 0 12px var(--roxo-principal);
+    border-radius: 8px;
+}
+
+.emocao-option input[type="radio"]:checked ~ .emocao-nome {
+    color: var(--roxo-principal);
+    font-weight: 700;
+}
+
+.emocao-option input[type="radio"]:checked {
+    border-color: var(--roxo-principal);
+    background-color: var(--roxo-claro); 
+}
+
+
+/* 8. Estilos para o Gráfico (Sem mudanças) */
+.grafico-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--branco);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 9. Rodapé (NOVA SEÇÃO) */
+.rodape {
+    background-color: var(--roxo-fundo-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 2em 1em;
+    margin-top: auto; /* Empurra o rodapé para baixo */
+}
+
+.rodape__conteudo {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.rede-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--roxo-claro); /* Cor clara para o texto */
+    font-weight: 500;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.rede-link:hover {
+    color: var(--branco); /* Cor mais clara no hover */
+}
+
+.icone-instagram {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border: 2px solid var(--roxo-claro);
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-right: 8px;
+    color: var(--roxo-claro);
+    transition: all 0.3s ease;
+}
+
+.rede-link:hover .icone-instagram {
+    background-color: var(--roxo-principal);
+    border-color: var(--roxo-principal);
+    color: var(--branco);
+}
+
+.rodape__texto {
+    font-size: 0.8em;
+    color: var(--roxo-claro);
+    margin-top: 15px;
+}
+
+
+/* 10. Responsividade (Com ajustes para o rodapé) */
+@media (max-width: 650px) {
+    /* ... estilos de seção ... */
+    .logo-escola {
+        width: 200px; 
+    }
+    /* ... */
+    
+    .redes-sociais {
+        flex-direction: column; /* Links um abaixo do outro em mobile */
+        gap: 10px;
+    }
+    
+    .rede-link {
+        justify-content: center;
+    }
+}

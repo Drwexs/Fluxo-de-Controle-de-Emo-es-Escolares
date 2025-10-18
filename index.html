@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxo de Controle de Emoções Escolares</title>
+    
+    <link rel="stylesheet" href="styles.css"> 
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class="container principal">
+        <div class="container__caixa">
+            <img src="img/logo da escola.png" alt="Logo da Escola CEJA" class="logo-escola">
+            
+            <h1 class="container__titulo">Fluxo de Controle de Emoções Escolares</h1>
+            
+            <p class="container__aviso" style="font-size: 1.2em; color: inherit; margin-bottom: 20px;">
+                Análise diária para compreender e apoiar o bem-estar emocional dos alunos de sua escola.
+            </p>
+
+            <a href="#entrada-dados" class="container__botao">Acessar Painel de Registro</a> 
+            
+            <a href="#analise" class="container__botao botao_secundario">Ver Relatórios e Análises</a>
+            
+            <p class="container__aviso">Disponível para as turmas 1ºA, 1ºB, 2ºA, 2ºB, 3ºA, 3ºB e 3ºD do Colégio Estadual José de Alencar.</p>
+        </div>
+    </section>
+
+    <section id="entrada-dados" class="container secundario">
+        <div class="container__descricao">
+            <h2 class="descricao__titulo">1. Identificação</h2>
+            <p class="descricao__texto">
+                Insira seu nome e a turma para qual você deseja registrar a emoção esta semana.
+            </p>
+            
+            <div class="form-group" style="margin-top: 20px;">
+                <label for="alunoNome" class="form-label">Nome Completo:</label>
+                <input type="text" id="alunoNome" class="form-input" placeholder="Ex: Ana Clara" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="alunoTurma" class="form-label">Turma:</label>
+                <select id="alunoTurma" class="form-input" required>
+                    <option value="" disabled selected>Selecione a Turma</option>
+                    <option value="1A">1º Ano A</option>
+                    <option value="1B">1º Ano B</option>
+                    <option value="2A">2º Ano A</option>
+                    <option value="2B">2º Ano B</option>
+                    <option value="3A">3º Ano A</option>
+                    <option value="3B">3º Ano B</option>
+                    <option value="3D">3º Ano D</option>
+                </select>
+            </div>
+            
+            <a href="#" id="iniciar-registro-btn" class="container__botao botao_terciario" style="margin-top: 15px;">Iniciar Registro</a>
+        </div>
+    </section>
+
+    <section id="registro" class="container secundario registro-container" style="display: none;">
+        <div class="container__descricao">
+            <h2 class="descricao__titulo">2. Registro de Emoção</h2>
+            <p class="descricao__texto" id="aluno-info-display">
+                Aluno(a): [Nome do Aluno], Turma: [Turma]
+            </p>
+            
+            <div class="aluno-card" id="emocao-registro-card" style="margin-top: 20px;">
+                <strong>Como você se sente hoje?</strong>
+                <div class="emocao-group" data-aluno-id="temp_user">
+                    <label class="emocao-option">
+                        <input type="radio" name="temp_user_emocao" value="Feliz">
+                        <img src="img/Feliz.png.png" alt="Feliz" class="emocao-img">
+                        <span class="emocao-nome">Feliz</span>
+                    </label>
+                    <label class="emocao-option">
+                        <input type="radio" name="temp_user_emocao" value="Triste">
+                        <img src="img/triste.png.png" alt="Triste" class="emocao-img">
+                        <span class="emocao-nome">Triste</span>
+                    </label>
+                    <label class="emocao-option">
+                        <input type="radio" name="temp_user_emocao" value="Normal">
+                        <img src="img/normal;png.png" alt="Normal" class="emocao-img">
+                        <span class="emocao-nome">Normal</span>
+                    </label>
+                    <label class="emocao-option">
+                        <input type="radio" name="temp_user_emocao" value="Raiva">
+                        <img src="img/raiva.png.png" alt="Raiva" class="emocao-img">
+                        <span class="emocao-nome">Raiva</span>
+                    </label>
+                </div>
+                
+                <a href="#" id="salvar-registro-btn" class="container__botao botao_terciario" style="margin-top: 20px;">Salvar Registro e Ver Resultados</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="analise" class="container secundario" style="display: none; min-height: 70vh;">
+        <div class="container__descricao">
+            <h2 class="descricao__titulo">Quadro Emocional Geral da Escola</h2>
+            <p class="descricao__texto" id="status-analise">Carregando dados...</p>
+            
+            <div class="grafico-container">
+                <canvas id="emocaoChart"></canvas>
+            </div>
+            
+            <div style="display: flex; gap: 10px; margin-top: 20px; justify-content: center;">
+                <a href="#" id="limpar-dados-btn" class="container__botao botao_secundario" style="display: inline-block; background-color: #f44336; border-color: #f44336;">Limpar Dados (Zerar)</a>
+                <a href="#" id="recarregar-pagina-btn" class="container__botao botao_terciario" style="display: inline-block;">Novo Registro</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="rodape">
+        <div class="rodape__conteudo">
+            <div class="redes-sociais">
+                <a href="https://www.instagram.com/colegioestadualjodealencar" target="_blank" class="rede-link">
+                    <span class="icone-instagram">@</span>colégioestadualjodealencar
+                </a>
+                
+                <a href="https://www.instagram.com/yagooutx" target="_blank" class="rede-link">
+                    <span class="icone-instagram">@</span>yagooutx
+                </a>
+            </div>
+
+            <p class="rodape__texto">
+                Desenvolvido por Yago Gabriel Teixeira da Silva.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
